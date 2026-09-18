@@ -2,22 +2,127 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Please Stand By</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Feeder automatically publishes updates from blogs, web comics, public Telegram channels, YouTube channels, subreddits, AI channels, and other feeds to FreeFeed. Registration is invite-only.">
+<meta name="theme-color" content="#141716">
+<title>Feeder</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html, body { width: 100%; height: 100%; overflow: hidden; background: #000; }
-  img {
+  * { box-sizing: border-box; }
+
+  html {
+    color-scheme: dark;
+    background: #141716;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: grid;
+    place-items: center;
+    padding: 1.25rem;
+    padding: max(1.25rem, env(safe-area-inset-top))
+      max(1.25rem, env(safe-area-inset-right))
+      max(1.25rem, env(safe-area-inset-bottom))
+      max(1.25rem, env(safe-area-inset-left));
+    color: #f4f3ed;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.6;
+  }
+
+  .background {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  .panel {
+    position: relative;
+    width: 100%;
+    max-width: 29rem;
+    padding: clamp(1.5rem, 5vw, 2.75rem);
+    border: 1px solid #454a43;
+    border-radius: 1.25rem;
+    background: #191d1a;
+    box-shadow: 0 1.5rem 5rem #0008;
+  }
+
+  .wordmark {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin: 0 0 1.75rem;
+    color: #d9edb0;
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+  }
+
+  .wordmark svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .description {
+    margin: 0 0 1.75rem;
+    color: #c0c5bc;
+    font-size: 1rem;
+  }
+
+  .sign-in {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 3.25rem;
+    padding: 0.75rem 1.125rem;
+    border-radius: 0.625rem;
+    background: #d9edb0;
+    color: #1b2711;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .sign-in:hover {
+    background: #e7f6ca;
+  }
+
+  .sign-in:focus-visible {
+    outline: 3px solid #f4f3ed;
+    outline-offset: 4px;
+  }
+
+  .invitation {
+    margin: 1rem 0 0;
+    color: #a9b0a5;
+    font-size: 0.875rem;
+    text-align: center;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .background { display: none; }
   }
 </style>
 </head>
 <body>
-<img src="assets/animation.gif" alt="">
+<img class="background" src="assets/animation.gif" alt="">
+<main class="panel">
+  <p class="wordmark">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+      <circle cx="5" cy="19" r="1" fill="currentColor" stroke="none"/>
+      <path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"/>
+    </svg>
+    feeder
+  </p>
+  <p class="description"><strong>Feeder</strong> automatically publishes updates from blogs, web comics, public Telegram channels, YouTube channels, subreddits, AI channels, and other feeds to FreeFeed.</p>
+  <a class="sign-in" href="https://app.fffeeder.com/session/new">
+    Sign in <span aria-hidden="true">&rarr;</span>
+  </a>
+  <p class="invitation">Registration is invite-only.</p>
+</main>
 </body>
 </html>
