@@ -26,8 +26,8 @@
       max(1.25rem, env(safe-area-inset-bottom))
       max(1.25rem, env(safe-area-inset-left));
     color: #f4f3ed;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    line-height: 1.6;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
   }
 
   .background {
@@ -44,32 +44,14 @@
     position: relative;
     width: 100%;
     max-width: 29rem;
-    padding: clamp(1.5rem, 5vw, 2.75rem);
+    padding: clamp(1.75rem, 4vw, 2rem) clamp(2rem, 5vw, 2.5rem);
     border: 1px solid #454a43;
-    border-radius: 1.25rem;
+    border-radius: 0.5rem;
     background: #191d1a;
-    box-shadow: 0 1.5rem 5rem #0008;
-  }
-
-  .wordmark {
-    display: flex;
-    align-items: center;
-    gap: 0.65rem;
-    margin: 0 0 1.75rem;
-    color: #d9edb0;
-    font-size: 1.125rem;
-    font-weight: 700;
-    letter-spacing: -0.04em;
-  }
-
-  .wordmark svg {
-    width: 1.25rem;
-    height: 1.25rem;
-    flex-shrink: 0;
   }
 
   .description {
-    margin: 0 0 1.75rem;
+    margin: 0 0 1.5rem;
     color: #c0c5bc;
     font-size: 1rem;
   }
@@ -77,14 +59,20 @@
   .sign-in {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    min-height: 3.25rem;
-    padding: 0.75rem 1.125rem;
-    border-radius: 0.625rem;
+    justify-content: center;
+    width: fit-content;
+    margin-inline: auto;
+    min-height: 3rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
     background: #d9edb0;
     color: #1b2711;
-    font-weight: 650;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    white-space: nowrap;
     text-decoration: none;
+    box-shadow: 0 1px 3px #0000001a, 0 1px 2px -1px #0000001a;
   }
 
   .sign-in:hover {
@@ -92,14 +80,15 @@
   }
 
   .sign-in:focus-visible {
-    outline: 3px solid #f4f3ed;
-    outline-offset: 4px;
+    outline: 2px solid #f4f3ed;
+    outline-offset: 1px;
   }
 
   .invitation {
-    margin: 1rem 0 0;
+    margin: 1.5rem 0 0;
     color: #a9b0a5;
     font-size: 0.875rem;
+    line-height: 1.25rem;
     text-align: center;
   }
 
@@ -111,16 +100,9 @@
 <body>
 <img class="background" src="assets/animation.gif" alt="">
 <main class="panel">
-  <p class="wordmark">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-      <circle cx="5" cy="19" r="1" fill="currentColor" stroke="none"/>
-      <path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"/>
-    </svg>
-    feeder
-  </p>
-  <p class="description"><strong>Feeder</strong> automatically publishes updates from blogs, web comics, public Telegram channels, YouTube channels, subreddits, AI channels, and other feeds to FreeFeed.</p>
+  <p class="description"><strong>Feeder</strong> automatically publishes updates from blogs, web comics, public Telegram channels, YouTube, subreddits, AI prompts, and other sources to FreeFeed.</p>
   <a class="sign-in" href="https://app.fffeeder.com/session/new">
-    Sign in <span aria-hidden="true">&rarr;</span>
+    Sign in
   </a>
   <p class="invitation">Registration is invite-only.</p>
 </main>
